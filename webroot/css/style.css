@@ -1,6 +1,6 @@
 body{
     font-size: 1.4em;
-    background-color: #FEF7D5;
+    background-color: rgba(254,247,213,0.29);
 }
 .ui.inverted.menu .item,
 .ui.inverted.menu .item>a:not(.ui){
@@ -24,6 +24,9 @@ body{
 .ui.segment {
     border-style: dashed;
     border-width: 2px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
 }
 .title{
     font-size:2em;
@@ -34,4 +37,31 @@ body{
 i.icon:before {
     padding-top: 10px;
     color:#EDA184;
+}
+.ui.input input {
+    width:550px;
+}
+.ui.grid>.column:not(.row) {
+    padding-top :1rem;
+}
+.ui.tabular.menu .active.item{
+    background-color: #EDA184;
+}
+.ui.tab.active, .ui.tab.open {
+    /*background-color: rgba(237,161,132,0.4);*/
+}
+.ui.segment.hover:hover{
+    background-color: rgba(237,161,132,0.4);
+}
+.ui.grid.segment {
+    background-color: rgba(254,247,213,0.4);
+}
+.ui.grid.segment:hover {
+    background-color:  rgba(237,161,132,0.4);
+}
+.ui.table{
+    background-color: rgba(254,247,213,0.4);
+}
+.ui.segment{
+    background-color: rgba(254,247,213,0.4);
 }

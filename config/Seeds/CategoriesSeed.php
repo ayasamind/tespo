@@ -30,6 +30,18 @@ class CategoriesSeed extends AbstractSeed
             [
                 'name' => 'category3',
                 'created' => date('Y-m-d H:i:s')
+            ],
+            [
+                'name' => 'category4',
+                'created' => date('Y-m-d H:i:s')
+            ],
+            [
+                'name' => 'category5',
+                'created' => date('Y-m-d H:i:s')
+            ],
+            [
+                'name' => 'category6',
+                'created' => date('Y-m-d H:i:s')
             ]
         ];
 

@@ -6,7 +6,7 @@
 ?>
 <div class="row"></div>
 <h3 class="ui">ユーザ一覧</h3>
-<table class="ui celled table">
+<table class="ui celled table user_table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -22,7 +22,7 @@
             <?php foreach ($users as $user): ?>
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
-                <td><?= $user->has('image') ? $this->Html->image($user->image, ['class' => "ui tiny image"]) : $this->Html->image('No-image-found.jpg', ['class' => "ui tiny image"])?></td>
+                <td><?= $user->has('image') ? $this->Html->image($user->image, ['class' => "ui mini image"]) : $this->Html->image('No-image-found.jpg', ['class' => "ui tiny image"])?></td>
                 <td><?= h($user->name) ?></td>
                 <td><?= $this->Number->format($user->role) ?></td>
                 <td><?= h($user->created) ?></td>

@@ -42,6 +42,42 @@ class UsersSeed extends AbstractSeed
                 'role' => 0,
                 'created' => date('Y-m-d H:i:s')
             ],
+            [
+                'email' => 'example4@gmail.com',
+                'password' => 'example4',
+                'name' => 'example4',
+                'role' => 0,
+                'created' => date('Y-m-d H:i:s'),
+                'image' => 'miho.jpg',
+                'image_url' => 'files/Users/image/'
+            ],
+            [
+                'email' => 'example5@gmail.com',
+                'password' => 'example5',
+                'name' => 'example5',
+                'role' => 0,
+                'created' => date('Y-m-d H:i:s'),
+                'image' => 'miho.jpg',
+                'image_url' => 'files/Users/image/'
+            ],
+            [
+                'email' => 'example6@gmail.com',
+                'password' => 'example6',
+                'name' => 'example6',
+                'role' => 0,
+                'created' => date('Y-m-d H:i:s'),
+                'image' => 'miho.jpg',
+                'image_url' => 'files/Users/image/'
+            ],
+            [
+                'email' => 'example7@gmail.com',
+                'password' => 'example7',
+                'name' => 'example7',
+                'role' => 0,
+                'created' => date('Y-m-d H:i:s'),
+                'image' => 'miho.jpg',
+                'image_url' => 'files/Users/image/'
+            ],
         ];
 
         $table = $this->table('users');
