@@ -13,22 +13,21 @@ class CreateCategories extends AbstractMigration
     public function change()
     {
         $table = $this->table('categories');
-        $table->addColumn('name', 'string', [
+        $table->addColumn('name', 'text', [
             'default' => null,
-            'limit' => 255,
             'null' => false,
         ]);
         $table->addIndex([
             'name',
         ], [
-            'name' => 'UNIQUE_NAME',
             'unique' => true,
         ]);
-        $table->addIndex([
-            'id',
-        ], [
-            'name' => 'BY_ID',
-            'unique' => false,
+        $table->addColumn('created', 'timestamp', [
+            'default' => null,
+        ]);
+        $table->addColumn('modified', 'timestamp', [
+            'default' => null,
+            'null' => true,
         ]);
         $table->create();
     }

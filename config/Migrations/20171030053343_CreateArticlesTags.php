@@ -15,25 +15,28 @@ class CreateArticlesTags extends AbstractMigration
         $table = $this->table('articles_tags');
         $table->addColumn('article_id', 'integer', [
             'default' => null,
-            'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('tag_id', 'integer', [
             'default' => null,
-            'limit' => 11,
             'null' => false,
         ]);
         $table->addIndex([
             'article_id',
         ], [
-            'name' => 'BY_ARTICLE_ID',
             'unique' => false,
         ]);
         $table->addIndex([
             'tag_id',
         ], [
-            'name' => 'BY_TAG_ID',
             'unique' => false,
+        ]);
+        $table->addColumn('created', 'timestamp', [
+            'default' => null,
+        ]);
+        $table->addColumn('modified', 'timestamp', [
+            'default' => null,
+            'null' => true,
         ]);
         $table->create();
     }
