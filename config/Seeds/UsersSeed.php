@@ -24,7 +24,9 @@ class UsersSeed extends AbstractSeed
                 'password' => 'example1',
                 'name' => 'example1',
                 'role' => 0,
-                'created' => date('Y-m-d H:i:s')
+                'created' => date('Y-m-d H:i:s'),
+                'image' => 'miho.jpg',
+                'image_url' => 'files/Users/image/'
             ],
             [
                 'email' => 'example2@gmail.com',

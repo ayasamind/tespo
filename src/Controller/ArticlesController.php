@@ -21,13 +21,16 @@ class ArticlesController extends AppController
     public function index()
     {
         $articles = $this->paginate($this->Articles, [
-            'contain' => ['Categories', 'Users']
+            'contain' => ['Categories', 'Users', 'Tags']
         ]);
         $categories = TableRegistry::get('Categories')
             ->find()
             ->all();
+        $tags = TableRegistry::get('Tags')
+            ->find()
+            ->all();
 
-        $this->set(compact('articles','categories'));
+        $this->set(compact('articles','categories', 'tags'));
         $this->set('_serialize', ['articles']);
     }
 
@@ -41,7 +44,7 @@ class ArticlesController extends AppController
     public function view($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => ['Categories', 'Users']
+            'contain' => ['Categories', 'Users' ,'Tags']
         ]);
 
         $this->set('article', $article);
@@ -65,8 +68,10 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $this->set(compact('article'));
-        $this->set('_serialize', ['article']);
+        $this->set('tags', $this->Articles->tags->find('list'));
+        $this->set('categories', $this->Articles->categories->find('list'));
+        $this->set(compact('article','tags', 'categories'));
+        $this->set('_serialize', ['article', 'tags', 'categories']);
     }
 
     /**

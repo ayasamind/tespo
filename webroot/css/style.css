@@ -11,5 +11,27 @@ body{
     margin-top:10px;
     margin-bottom: 20px;
     border-style: dashed;
-    border-width: 7px;
+}
+.ui.grid>.column:not(.row){
+    padding-top: 3rem;
+}
+.ui.column.grid>[class*="two wide"].column, .ui.grid>.column.row>[class*="two wide"].column, .ui.grid>.row>[class*="two wide"].column, .ui.grid>[class*="two wide"].column{
+    margin-top: 1rem;
+}
+.ui.label>a {
+    opacity:20;
+}
+.ui.segment {
+    border-style: dashed;
+    border-width: 2px;
+}
+.title{
+    font-size:2em;
+}
+.ui.table:first-child {
+    margin-top: 20px;
+}
+i.icon:before {
+    padding-top: 10px;
+    color:#EDA184;
 }

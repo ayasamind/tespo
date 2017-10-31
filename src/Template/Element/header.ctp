@@ -2,17 +2,17 @@
     <a class="item font">Respo</a>
     <div class="right menu">
         <div class="item">
-            <div class="ui yellow button">+作成</div>
+            <?= $this->Html->link('+作成', ['controller' => 'Articles','action' => 'add'], ['class'=>'ui yellow button'])?>
         </div>
         <div class="item">
-            <div class="ui primary button">一覧</div>
+            <?= $this->Html->link('一覧', ['controller' => 'Articles','action' => 'index'], ['class'=>'ui primary button'])?>
         </div>
         <div class="item">
             <div class="ui dropdown">
                 設定<i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item">Myアカウント</a>
-                    <a class="item">ユーザー管理</a>
+                    <?= $this->Html->link('Myアカウント', ['controller' => 'Users', 'action' => 'view'], ['class' => 'item']) ?>
+                    <?= $this->Html->link('ユーザー管理', ['controller' => 'Users', 'action' => 'index'], ['class' => 'item']) ?>
                 </div>
             </div>
         </div>
@@ -21,4 +21,10 @@
 
 <script>
     $('.dropdown').dropdown();
+    $(document).ready(function(){
+        $('.ui .item').on('click', function() {
+            $('.ui .item').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
 </script>

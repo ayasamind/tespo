@@ -4,23 +4,24 @@
  * @var \App\Model\Entity\Article $article
  */
 ?>
-<div class="articles form large-9 medium-8 columns content">
-    <?= $this->Form->create($article) ?>
-    <fieldset>
-        <legend><?= __('Add Article') ?></legend>
+<?= $this->Form->create($article) ?>
+<app></app>
         <?php
-            echo $this->Form->control('title');
-            echo $this->Form->control('body');
             echo $this->Form->control('templates');
-            echo $this->Form->control('commit_log');
             echo $this->Form->control('category_id', ['options' => $categories]);
-            echo $this->Form->control('user_id', ['options' => $users]);
-            echo $this->Form->control('modified_user_id');
-            echo $this->Form->control('delete_flg');
-            echo $this->Form->control('deleted');
             echo $this->Form->control('tags._ids', ['options' => $tags]);
         ?>
-    </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-</div>
+
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<?= $this->Html->script("marked.js") ?>
+<script data-src="../webroot/js/tags/app.tag" type="riot/tag"></script>
+<script data-src="../webroot/js/tags/app-title.tag" type="riot/tag"></script>
+<script data-src="../webroot/js/tags/app-todo.tag" type="riot/tag"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/riot/3.7.3/riot+compiler.min.js"></script>
+<script>riot.mount('*')</script>
