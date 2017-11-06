@@ -59,6 +59,11 @@ class ArticlesTable extends Table
             'targetForeignKey' => 'tag_id',
             'joinTable' => 'articles_tags'
         ]);
+        $this->belongsToMany('Templates', [
+            'foreignKey' => 'article_id',
+            'targetForeignKey' => 'template_id',
+            'joinTable' => 'articles_templates'
+        ]);
     }
 
     /**

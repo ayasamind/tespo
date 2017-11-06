@@ -21,7 +21,7 @@ class ArticlesController extends AppController
     public function index()
     {
         $articles = $this->paginate($this->Articles, [
-            'contain' => ['Categories', 'Users', 'Tags']
+            'contain' => ['Categories', 'Users', 'Tags', 'Templates']
         ]);
         $categories = TableRegistry::get('Categories')
             ->find()
@@ -30,7 +30,7 @@ class ArticlesController extends AppController
             ->find()
             ->all();
 
-        $this->set(compact('articles','categories', 'tags'));
+        $this->set(compact('articles','categories', 'tags', 'Templates'));
         $this->set('_serialize', ['articles']);
     }
 

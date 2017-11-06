@@ -67,7 +67,7 @@
         <div class="ui tab" data-tab="templates">
             <?php foreach($articles as $article) : ?>
                 <div class="ui segment hover">
-                    <?= h($article->templates) ?>
+                    <?= h($article->title) ?>
                 </div>
             <?php endforeach;?>
         </div>

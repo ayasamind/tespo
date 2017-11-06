@@ -107,4 +107,22 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error('メールアドレス、もしくはパスワードが正しくありません。');
+        }
+    }
+
+    public function logout()
+    {
+        $this->Flash->success('ログアウトしました。');
+        return $this->redirect($this->Auth->logput());
+    }
 }
