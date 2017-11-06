@@ -11,7 +11,6 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-
     /**
      * Index method
      *
@@ -111,6 +110,8 @@ class UsersController extends AppController
     public function login()
     {
         if ($this->request->is('post')) {
+            // debug($this->request->getData()); exit;
+            // debug($this->Auth); exit;
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
@@ -123,6 +124,6 @@ class UsersController extends AppController
     public function logout()
     {
         $this->Flash->success('ログアウトしました。');
-        return $this->redirect($this->Auth->logput());
+        return $this->redirect($this->Auth->logout());
     }
 }

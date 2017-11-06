@@ -46,10 +46,8 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
-                    'userModel' => 'Users',
                     'fields' => [
-                        'username' => 'email',
-                        'password' => 'password'
+                        'username' => 'email'
                     ]
                 ]
             ],
@@ -62,8 +60,7 @@ class AppController extends Controller
                 'action' => 'login'
             ]
         ]);
-
-        $this->Auth->allow(['login', 'logout','index']);
+        $this->Auth->allow(['login', 'logout','index', 'add']);
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
